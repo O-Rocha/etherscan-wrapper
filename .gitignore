@@ -1,0 +1,5 @@
+#Virtual environment dependencies
+ETHSWP-DEV/
+
+#python cache
+__pycache__/
