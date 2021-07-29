@@ -3,3 +3,6 @@ ETHSWP-DEV/
 
 #python cache
 __pycache__/
+
+#configuration file
+api_config.json
