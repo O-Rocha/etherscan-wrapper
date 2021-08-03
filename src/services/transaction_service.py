@@ -13,18 +13,17 @@ class TransactionService:
         self.service_config = config
         self.__config_mode = config.module
 
-    def get_normal_transactions(self) -> list:
+    def get_transactions(self) -> list:
         response = []
         if (self.__config_mode == 'account'):
-            response = requests.get(REQUEST_BUILDER.normal_request(self.service_config)).json()[self.__ETHERSCAN_TXLIST]
+            response = requests.get(REQUEST_BUILDER.transaction_request(self.service_config)).json()[self.__ETHERSCAN_TXLIST]
         else:
-            raise Exception('Error on api configuration: config not on contract module')
+            raise Exception('Error on api configuration: config not on account module')
         return response
-
+    
     def get_internal_transactions(self) -> list:
-        response = []
-        if (self.__config_mode == 'account'):
-            response = requests.get(REQUEST_BUILDER.internal_transaction_request(self.service_config)).json()[self.__ETHERSCAN_TXLIST]
-        else:
-            raise Exception('Error on api configuration: config not on contract module')
+        temp = self.service_config.action
+        self.service_config.set_action('txlistinternal')
+        response = self.get_transactions()
+        self.service_config.set_action(temp)
         return response

@@ -8,12 +8,12 @@ config.set_config('api-config.json')
 
 service = TransactionService(config)
 
-txlist = service.get_normal_transactions()
+txlist = service.get_transactions()
 txlistinternal = service.get_internal_transactions()
 
-fileWriter.make_file(txlist, f'../{config.address}_tx.txt')
+fileWriter.write_list(txlist, f'../{config.address}_tx.txt')
 
-fileWriter.make_file(txlistinternal, f'../{config.address}_txinternal.txt')
+fileWriter.write_list(txlistinternal, f'../{config.address}_txinternal.txt')
 
 # service = ContractService(config)
 
