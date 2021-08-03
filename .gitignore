@@ -1,8 +1,5 @@
-#Virtual environment dependencies
-ETHSWP-DEV/
-
 #python cache
 __pycache__/
 
 #configuration file
-api_config.json
+api-config.json
