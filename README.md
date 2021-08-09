@@ -1,6 +1,6 @@
 # Python library to interface with the Etherscan API
 
-# Example configuration file
+## Example configuration file
 
 ```json:
 {
@@ -11,4 +11,16 @@
     "api_key":"<YOUR_API_KEY_HERE>"
 }
 
+```
+
+## Example database configuration file
+
+```json:
+{
+    "database": "<database_name>",
+    "user": "postgres",
+    "password": "<your_passwd>",
+    "host": "127.0.0.1",
+    "port": "5432"
+}
 ```
